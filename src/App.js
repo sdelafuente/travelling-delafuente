@@ -1,9 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
 
-function App() {
+const App = () => {
+    const nameStyle = {
+        backgroundColor: "green",
+    };
+    
   return (
-    <div className="App">
+    <div className="App" style={nameStyle}>
+        <NavBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

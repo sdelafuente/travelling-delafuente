@@ -1,0 +1,69 @@
+.header {
+    overflow: hidden;
+}
+
+#navigation {
+    background-color: #0B4C5F;
+	position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    box-shadow: 5px 5px 3px 1px #999;
+    
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    margin:auto;
+    align-items: center;
+}
+
+#navigation ul {
+    list-style: none;
+    display: flex;
+    width: 80%;
+    align-self: center;
+}
+
+#navigation li {
+	display: inline;
+    padding-right: 20px;
+    color: #01A9DB;
+}
+
+#navigation a {
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Pseudo Clases */
+#navigation li a:link {
+    color: #E0F2F7;
+}
+
+#navigation li a:visited {
+    color: #E0F2F7;
+}
+
+/* Pesudo clases dinámicas */
+#navigation li a:active {
+    color: red;
+}
+
+#navigation li a:hover {
+    text-decoration: none;
+    color: #0B4C5F;
+    background-color: #E0F2F7;
+}
+
+#navigation li a:focus {
+	text-decoration: none;
+    color:#0B4C5F;
+	background-color: #A9E2F3;
+    outline: none;
+}
+
+.logo-inicio {
+  height: 5vmin;
+  pointer-events: none;
+}
