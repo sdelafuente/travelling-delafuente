@@ -1,5 +1,7 @@
 import './NavBar.css';
 import logo from './logo.svg';
+import imagen from '../imagenes/shopping-cart-2.png';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
     return (
@@ -21,6 +23,9 @@ function NavBar() {
                     </li>
                     <li>
                         <a href="#" tabindex="4">Formulario</a>
+                    </li>
+                    <li>
+                        <CartWidget title="imagen" image={imagen} cantidad={0} />
                     </li>
                 </ul>
             </nav>

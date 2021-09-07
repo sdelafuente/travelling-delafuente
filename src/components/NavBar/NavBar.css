@@ -19,21 +19,33 @@
 }
 
 #navigation ul {
-    list-style: none;
+    /* list-style: none;
     display: flex;
     width: 80%;
-    align-self: center;
+    align-self: center; */
+
+    padding: 0;
+    margin: auto 0;
 }
 
 #navigation li {
-	display: inline;
+	/* display: inline;
     padding-right: 20px;
     color: #01A9DB;
+    align-content: center; */
+
+    float: left;
+    list-style: none;
+    padding: 0.5em 1em;
+    line-height: 1.5em;
 }
 
-#navigation a {
+#navigation li a {
+    /* text-decoration: none;
+    display: block; */
     text-decoration: none;
-    padding: 5px;
+    font-weight: bold;
+    display: block;
 }
 
 /* Pseudo Clases */
