@@ -1,10 +1,11 @@
 div.item {
   /* width: 200px; */
-  width: 50%;
+  width: 20%;
   border: 5px solid black;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  padding: 5px;
 }
 div.item .title {
   margin: 1rem 0.5rem;
@@ -13,4 +14,3 @@ div.item .title {
 div.item .description {
   margin: 1rem 0.5rem 0.5rem;
 }
-

@@ -1,18 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 const App = () => {
-    const nameStyle = {
-        backgroundColor: "green",
-    };
-    
+
   return (
-    <div className="App" style={nameStyle}>
+    <div className="App">
         <NavBar />
       <header className="App-header">
-        <ItemListContainer 
+        <ItemListContainer
         title="Bienvendio"
         description="Este va a ser mi E-commerce"
         />

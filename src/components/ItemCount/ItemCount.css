@@ -1,0 +1,18 @@
+.itemCount {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  border: 2px solid #0B4C5F;
+  padding: 5px;
+
+}
+
+.itemCount div > button {
+    width: 3em;
+    background-color: #E0F2F7;
+}
+
+.itemCount button > span {
+    font-size: 2em;
+}
