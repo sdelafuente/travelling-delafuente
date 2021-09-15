@@ -1,16 +1,8 @@
-div.item {
-  /* width: 200px; */
-  width: 20%;
-  border: 5px solid black;
+div.ItemListContainer {
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 5px;
-}
-div.item .title {
-  margin: 1rem 0.5rem;
-}
-
-div.item .description {
-  margin: 1rem 0.5rem 0.5rem;
+  padding: 5px 1em;
+  margin-top: 2em;
 }
