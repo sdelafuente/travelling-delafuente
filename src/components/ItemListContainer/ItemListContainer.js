@@ -7,21 +7,24 @@ const ItemListContainer = (props) => {
     const [items, setItems] = React.useState([]);
     const [cargando, setCargando] = React.useState(false);
 
-    React.useEffect(() => {
-      setCargando(true);
-      getProducts()
-      .then((result) => {
-            setItems(result);
-      })
-      .finally(() => setCargando(false));
-    }, []);
-
-    const getProducts = () => {
-      return new Promise((resolve) => {
-        setTimeout(() => resolve(productos), 2000);
-      });
+    const getProductos = () => {
+        return new Promise((resolve) => {
+            setTimeout(() => resolve(productos), 2000);
+        });
     };
 
+    const getProductosAsyncAwait = async () => {
+        return await getProductos();
+    };
+
+    React.useEffect(() => {
+      setCargando(true);
+
+      getProductosAsyncAwait()
+      .then((result) => setItems(result))
+      .finally(() => setCargando(false));
+
+    }, []);
     // const comprarProducto = (product) => {
         //   console.log(`Has comprado el producto: ${product}`);
         // };

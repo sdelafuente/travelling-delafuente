@@ -3,7 +3,6 @@ import "./ItemList.css";
 import Item from "../Item/Item";
 
 const ItemListContainer = ({productos}) => {
-    console.log(productos);
   return (
     <div  style={{ display: "flex", justifyContent: "space-evenly" }}>
     {
