@@ -9,7 +9,6 @@ const Item = ({ title, description, image, comprar, price }) => {
       <div className="imageContainer">
         <img className="image" src={image} alt={title} />
       </div>
-      <p className="description">{description}</p>
       <p className="price">$ {price}</p>
       {
           // <button className="styles.button} onClick={() => comprar(title)}>

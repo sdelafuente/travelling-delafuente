@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 const App = () => {
 
@@ -8,10 +9,10 @@ const App = () => {
     <div className="App">
         <NavBar />
       <header className="App-header">
-        <ItemListContainer
-        title="Bienvendio"
-        description="Este va a ser mi E-commerce"
-        />
+        {
+            // <ItemListContainer  />
+        }
+        <ItemDetailContainer />
       </header>
     </div>
   );
