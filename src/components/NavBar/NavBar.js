@@ -1,28 +1,37 @@
+import * as React from "react";
+
 import './NavBar.css';
 import logo from './logo.svg';
 import imagen from '../imagenes/shopping-cart-2.png';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from "react-router-dom";
 
-function NavBar() {
+const NavBar = () => {
+    const [categorias, setCategorias] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch("http://localhost:3001/categorias")
+        .then((response) => response.json())
+        .then((categorias) => setCategorias(categorias));
+    }, []);
+
     return (
         <div className="header">
             <nav id="navigation">
-                <img src={logo} className="logo-inicio" alt="inicio" />
+                <Link to="/">
+                    <img src={logo} className="logo-inicio" alt="inicio" />
+                </Link>
+
                 <ul>
+                    {categorias?.map((categoria) => (
+                        <li value={categoria.id} key={categoria.id}>
+                            <Link to={`/categoria/${categoria.id}`}>
+                                {categoria.nombre}
+                            </Link>
+                        </li>
+                    ))}
                     <li>
-                        <a href="https://atom.io/docs" target="_self" tabIndex="1">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="https://atom.io/docs" tabIndex="2">Productos</a>
-                    </li>
-                    <li>
-                        <a href="https://atom.io/docs" tabIndex="3">Nosotros</a>
-                    </li>
-                    <li>
-                        <a href="https://atom.io/docs" tabIndex="4">Contacto</a>
-                    </li>
-                    <li>
-                        <a href="https://atom.io/docs" tabIndex="4">Formulario</a>
+                        <a href="https://atom.io/docs" tabIndex="4">FAQ</a>
                     </li>
                     <li>
                         <CartWidget title="imagen" image={imagen} cantidad={0} />

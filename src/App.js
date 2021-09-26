@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
@@ -14,10 +14,12 @@ const App = () => {
     //   </header>
     // </div>
     <BrowserRouter>
-      <NavBar />
-      <Switch>
+    <NavBar />
+    <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/home" component={Home} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/categoria/:id" component={Home} />
+        <Route exact path="/item/:id" component={ItemDetailContainer } />
         <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>

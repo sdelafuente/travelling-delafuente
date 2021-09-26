@@ -11,7 +11,7 @@ function ItemCount({stock, inicial, onAdd}) {
   };
 
   const decrementar = () => {
-      if (contador >= 1) {
+      if (contador > 1) {
           setContador(prevState => prevState - 1);
       }
   };

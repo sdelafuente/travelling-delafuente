@@ -10,6 +10,7 @@ const ItemListContainer = ({productos}) => {
             return (
                 <Item
                 key={producto.id}
+                productoId={producto.id}
                 title={producto.title}
                 description={producto.description}
                 image={producto.image}
