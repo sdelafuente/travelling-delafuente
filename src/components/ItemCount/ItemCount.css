@@ -1,10 +1,13 @@
+.div {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+
 .itemCount {
-  display: flex; /* or inline-flex */
-  flex-direction: row;
-  justify-content: space-evenly;
   border-radius: 10px;
   border: 2px solid #0B4C5F;
-  padding: 5px;
 
 }
 

@@ -5,10 +5,11 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 const ItemDetail = ({item}) => {
+    const [cantidad, setCantidad] = React.useState(0);
 
-    const comprar = (titulo) => {
-        console.log(`Compraste ${titulo}`);
-    }
+    const onAdd = (evento, valor) => {
+      setCantidad(valor);
+    };
 
   return (
     <div className="itemDetail">
@@ -19,11 +20,8 @@ const ItemDetail = ({item}) => {
         <p className="description">{item.description}</p>
         <p className="price">$ {item.price}</p>
         {
-            item.stock > 0 && <ItemCount stock={item.stock} inicial={1} />
+            item.stock > 0 && cantidad == 0 && <ItemCount stock={item.stock} inicial={1} onAdd={onAdd}/>
         }
-        <button className="button" onClick={() => comprar(item.title)}>
-            Agregar al Carrito
-        </button>
         <button className="button">
             <Link style={{ textDecoration: "none", color: "inherit" }} to="/" >
                 Volver
