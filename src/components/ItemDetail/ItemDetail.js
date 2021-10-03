@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({item}) => {
     const [cantidad, setCantidad] = React.useState(0);
+    const [finalizar, setFinalizar] = React.useState(false);
 
     const onAdd = (evento, valor) => {
       setCantidad(valor);
+      setFinalizar(true);
     };
 
   return (
@@ -21,6 +23,13 @@ const ItemDetail = ({item}) => {
         <p className="price">$ {item.price}</p>
         {
             item.stock > 0 && cantidad == 0 && <ItemCount stock={item.stock} inicial={1} onAdd={onAdd}/>
+        }
+        {finalizar && 
+            <button className="button">
+                <Link style={{ textDecoration: "none", color: "inherit" }} to="/cart" >
+                    Ir al carrito
+                 </Link>
+             </button>
         }
         <button className="button">
             <Link style={{ textDecoration: "none", color: "inherit" }} to="/" >
