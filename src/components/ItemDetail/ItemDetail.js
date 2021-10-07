@@ -2,6 +2,7 @@
 import * as React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import CartContext from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const ItemDetail = ({item}) => {
@@ -10,6 +11,7 @@ const ItemDetail = ({item}) => {
 
     const onAdd = (evento, valor) => {
       setCantidad(valor);
+      CartContext.
       setFinalizar(true);
     };
 
@@ -24,8 +26,9 @@ const ItemDetail = ({item}) => {
         {
             item.stock > 0 && cantidad == 0 && <ItemCount stock={item.stock} inicial={1} onAdd={onAdd}/>
         }
-        {finalizar && 
+        {finalizar &&
             <button className="button">
+                
                 <Link style={{ textDecoration: "none", color: "inherit" }} to="/cart" >
                     Ir al carrito
                  </Link>

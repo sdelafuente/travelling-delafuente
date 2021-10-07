@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
+import CartProvider from "./context/CartContext";
 
 const App = () => {
 
@@ -14,17 +15,19 @@ const App = () => {
     //   <header className="App-header">
     //   </header>
     // </div>
-    <BrowserRouter>
-    <NavBar />
-    <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/categoria/:id" component={Home} />
-        <Route exact path="/item/:id" component={ItemDetailContainer } />
-        <Route exact path="/cart" component={Cart } />
-        <Route path="*" component={NotFound} />
-      </Switch>
-    </BrowserRouter>
+    <CartProvider>
+        <BrowserRouter>
+        <NavBar />
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/categoria/:id" component={Home} />
+                <Route exact path="/item/:id" component={ItemDetailContainer } />
+                <Route exact path="/cart" component={Cart } />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+    </CartProvider>
   );
 }
 
